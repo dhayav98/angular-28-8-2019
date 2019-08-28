@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>create_new_company</title>
+
+</head>
+
+<body class="bodystyle">
+
+    <header class="header">
+        <ul class="header-list">
+            <li><img class="header-logo" src="images/stock-logo.png"></li>
+            <li><span class="header-title">STOCK MARKET</span></li>
+            <li id="logout-link"><a class="logout-link" href="#">Logout</a></li>
+
+        </ul>
+    </header>
+    <div class="main">
+        <ul class="nav-bar">
+            <li> <a href="/import-stock-page">Import Data</a></li>
+            <li><a href="/list-company-details">Manage Company</a></li>
+            <li><a href="/list-stock-exchange">Manage Exchange</a></li>
+            <li><a href="/list-ipo-details">Update IPO details</a></li>
+
+        </ul>
+
+        <h1 style="text-align: center;line-height: 200px">LIST OF STOCK EXCHANGE</h1>
+        <div class="file-upload">
+            <form id="form-summary" action="">
+                <table id="summary-table">
+                    <tr>
+                        <th>Stock Exchange Name</th>
+                        <th>Company Name</th>
+                        <th>CEO,BOD</th>
+                        <th>Breif</th>
+                      
+                    </tr>
+                    <tr *ngFor="let stock of stockExchange">
+                        <td>{{stock.stockExchangeName}}</td>
+                        <td>{{stock.brief}}</td>
+                        <td>{{stock.contactAddress}}</td>
+                        <td>{{stock.remarks}}</td>
+            
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+        <div>
+            <br>
+            <br>
+            <br>
+            <h1 style="text-align: center;"><a href="/create-stock-exchange"
+                    style="text-decoration: none;color:black;"><button type="button"
+                        title="Click to add more stock exchange" id="add-button" class="next round">&#43;</button>
+                    &nbsp; &nbsp;Add Stock Exchange Details</a></h1>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p style="line-height: 60px; padding: 1px 16px;">&copy; 2019
+            StockManagement.com</p>
+    </footer>
+</body>
+
+</html>

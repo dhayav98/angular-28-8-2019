@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>import_stock_page</title>
+</head>
+
+<body class="bodystyle">
+
+    <header class="header">
+        <ul class="header-list">
+            <li><img class="header-logo" src="assets/image/stock-logo.png"></li>
+            <li><span class="header-title">STOCK MARKET</span></li>
+            <li id="logout-link"><a class="logout-link" href="#">Logout</a></li>
+
+        </ul>
+    </header>
+    <div class="main">
+        <ul class="nav-bar">
+            <li> <a href="/import-stock-page">Import Data</a></li>
+            <li><a href="/list-company-details">Manage Company</a></li>
+            <li><a href="/list-stock-exchange">Manage Exchange</a></li>
+            <li><a href="/list-ipo-details">Update IPO details</a></li>
+
+        </ul>
+        <h1 style="text-align: center;line-height: 200px">IMPORT EXCEL</h1>
+        <div class="file-upload">
+            <form id="form-upload" action="">
+                <table id="upload-table">
+                    <tr id="upload-row">
+                        <td id="upload-data">Select Excel file to be Uploaded</td>
+                        <td id="upload-data"><input class="input-file" type="file" accept=".xlsx,.xlsm,.xltx,.xltm" (change)="selectFile($event)" multiple/></td>
+                        <td id="upload-data"><button class="upload-button" [disabled]="!selectedFiles" (click)="upload()" >Upload</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <br>
+        <br>
+  
+    </div>
+
+    <footer class="footer">
+        <p style="line-height: 60px;padding: 1px 16px;">&copy; 2019 StockManagement.com</p>
+    </footer>
+</body>
+</html>

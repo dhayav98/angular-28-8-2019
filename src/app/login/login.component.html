@@ -1,0 +1,49 @@
+<app-root></app-root>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bodystyle">
+
+    <header class="header">
+        <ul class="header-list">
+            <li><img class="header-logo" src="assets/image/stock-logo.png"></li>
+            <li><span class="header-title">STOCK MARKET</span></li>
+            <li id="logout-link"><a class="logout-link" href="#">Logout</a></li>
+
+        </ul>
+    </header>
+    <div class="user-main">
+        <form method="post" action="" class="login_form">
+
+            <h2 class="login-header"> Login</h2>
+
+            <span class="entypo-key inputUserIcon">
+                <i class="glyphicon glyphicon-user"></i>
+            </span>
+            <input type="text" class="user_form" name="userName" placeholder="username" [(ngModel)]="username"/>
+
+            <span class="entypo-key inputPassIcon">
+                <i class="glyphicon glyphicon-lock"></i>
+            </span>
+            <input type="password" class="user_form" name="userPassword" placeholder="password"  [(ngModel)]="password" />
+            <button class="submit" (click)=checkLogin()><span class="entypo-lock">SIGN IN</span></button>
+              <br>
+        <span class="user_reg"><a routerLink="/register" class="forgot">New User ? Register here..</a></span>
+        </form>
+
+    </div>
+    <footer class="footer">
+        <p style="line-height: 60px;padding: 1px 16px;">&copy; 2019 StockManagement.com</p>
+    </footer>
+</body>
+
+</html>
+<router-outlet></router-outlet>

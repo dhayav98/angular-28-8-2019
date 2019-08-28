@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>comparison_chart</title>
+
+</head>
+
+<body class="bodystyle">
+
+    <header class="header">
+        <ul class="header-list">
+            <li><img class="header-logo" src="images/stock-logo.png"></li>
+            <li><span class="header-title">STOCK MARKET</span></li>
+            <li id="logout-link"><a class="logout-link" href="#">Logout</a></li>
+
+        </ul>
+    </header>
+    <div class="main">
+        <ul class="nav-bar">
+            <li> <a href="/user-ipo-details">IPOs</a></li>
+            <li><a href="comparison_chart.html">Compare Company</a></li>
+            <li><a href="#">Compare Sector</a></li>
+            <li><a href="#">Other</a></li>
+
+        </ul>
+
+        <h1 style="text-align: center;line-height: 200px">IPO DETAILS</h1>
+
+        <div class="file-upload">
+            <section id="compare-container">
+                <form id="form-summary" name="compare-form" action="">
+                    <table id="summary-table">
+                        <tr>
+                            <th>#</th>
+                            <th>Company Name</th>
+                            <th>Stock Exchange</th>
+                            <th>About</th>
+                        </tr>
+                        <tr *ngFor="let ipo of ipoDetails">
+                            <td>{{ipo.ipoId}}</td>
+                            <td>{{ipo.companyName}}</td>
+                            <td>{{ipo.stockExchange}}</td>
+                            <td>{{ipo.remarks}}</td>
+                        </tr>
+                    </table>
+                </form>
+            </section>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container body-content">
+        <footer class="footer">
+            <p style="line-height: 60px;padding: 1px 16px;">&copy; 2019 StockManagement.com</p>
+        </footer>
+    </div>
+    <script>
+        function CloneForm(formName) {
+            var formCount = document.forms.length;
+            var oForm = document.forms[formName];
+            var clone = oForm.cloneNode(true);
+            clone.name += "_" + formCount;
+            document.getElementById('compare-container').appendChild(clone);
+        }
+    </script>
+
+</body>
+
+</html>

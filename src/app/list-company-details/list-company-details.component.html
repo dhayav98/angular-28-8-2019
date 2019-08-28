@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Company Details</title>
+    </head>
+    
+    <body class="bodystyle"> 
+            <header class="header">
+                    <ul class="header-list">
+                        <li><img class="header-logo" src="assets/image/stock-logo.png" ></li>
+                        <li><span class="header-title">STOCK MARKET</span></li>
+                        <li id="logout-link"><a class="logout-link" href="#">Logout</a></li>
+            
+                    </ul>
+                </header>
+    <div class="main">
+		<ul class="nav-bar">
+			<li> <a href="/import-stock-page">Import Data</a></li>
+            <li><a href="/list-company-details">Manage Company</a></li>
+            <li><a href="/list-stock-exchange">Manage Exchange</a></li>
+            <li><a href="/list-ipo-details">Update IPO details</a></li>
+		</ul>
+		<h1 style="text-align: center; line-height: 200px">LIST OF
+			COMPANIES</h1>
+		<div class="file-upload">
+			<form id="form-summary" action="">
+				<table id="summary-table">
+					<tr>
+						<th>Company Code</th>
+						<th>Company Name</th>
+						<th>CEO,BOD</th>
+						<th>Breif</th>
+						<th>Update</th>
+                    </tr>
+                    <tr *ngFor="let company of companies">
+                        <td>{{company.companyId}}</td>
+                        <td>{{company.companyName}}</td>
+                        <td>{{company.ceoName}}</td>
+                        <td>{{company.breifWriteUp}}</td>
+                        <td><input type="button" name="edit" value="edit"></td>
+                    </tr>
+				</table>
+			</form>
+			<div>
+				<br> <br> <br> <span>
+
+					<h1 style="text-align: center;">
+						<a href="/create-new-company"
+							style="text-decoration: none; color: black;">
+							<button type="button" title="Click to add new company details"
+								id="add-button" class="next round">&#43;</button> &nbsp;
+							&nbsp;Add Company Details</a>
+					</h1>
+				</span>
+
+			</div>
+		</div>
+
+</div>
+<footer class="footer">
+    <p style="line-height: 60px; padding: 1px 16px;">&copy; 2019
+        StockManagement.com</p>
+</footer>
+</body>
+
+
+</html>
